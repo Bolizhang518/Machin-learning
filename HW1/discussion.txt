@@ -1,0 +1,35 @@
+% Step #1: Load the data
+ data = load('G:\Courses\ML_ITA\Data\univariate1.txt');
+ size(data)
+ X = data(:, 1);
+ y = data(:, 2);
+ m = length(y);
+ 
+ % Step #2: Plot the data
+hist(X);
+figure(2);
+hist(y);
+plot(X, y, 'rx', 'MarkerSize', 10);
+xlabel('X');
+ylabel('Y');
+title('Is this cool?');
+
+% Step #3: Write the function in GetCost.m
+addpath('G:\Courses\ML_ITA\Code\Playground');
+
+% Step #4: Set the parameters:
+theta = zeros(2,1);
+alpha = 0.01
+n_iterations = 1000;
+
+% Step #5: normalize
+ X_normalized = (X-mean(X))./range(X);
+ y_normalized = (Y-mean(Y))./range(Y);
+ 
+ X_normalized = [ones(m,1), X_normalized(:,1)];
+
+% Step #5: Run gradient descent:
+[out_theta, J_history] = GradientDescent(X_normalized, y_normalized, theta, alpha, n_iterations);
+plot([1:1:n_iterations], J_history, 'g.', 'MarkerSize', 3);
+
+

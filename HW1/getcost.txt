@@ -1,0 +1,14 @@
+function J = GetCost(mpg,theta)
+	%COMPUTECOST Calculate cost for linear regression
+	%   J = GetCost(X, y, theta) calculates the cost of using theta as the
+	%   parameter for linear regression to fit the data points in X and y
+
+	% Initialize
+	m = length(mpg); % number of training examples
+
+	% ToDo: Calculate the cost given the inputs and return, for now, I return 0;
+	J = 0;
+endfunction
+% =========================================================================
+
+
